@@ -1,0 +1,23 @@
+<import src="card$38a29f9e" />
+<template name="index$7174bcd2">
+  <view class="_div data-v-d24cad4c container">
+    <view class="_div data-v-d24cad4c main-background"></view>
+    <view class="_div data-v-d24cad4c side-nav-layout">
+      <image src="{{item.iconImg}}" alt wx:key="item.tabName" key="{{item.tabName}}"
+        class="_img data-v-d24cad4c appIcon" bindtap="handleProxy" data-eventid="{{'0-'+index}}"
+        data-comkey="{{$k}}" wx:for="{{navs}}" wx:for-index="index" wx:for-item="item"></image>
+    </view>
+    <view class="_div data-v-d24cad4c main-container-layout">
+      <view class="_div data-v-d24cad4c main-container">
+        <view class="_div data-v-d24cad4c userinfo" bindtap="handleProxy" data-eventid="{{'1'}}"
+          data-comkey="{{$k}}">
+          <image class="_img data-v-d24cad4c userinfo-avatar" wx:if="{{userInfo.avatarUrl}}"
+            src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+          <view class="_div data-v-d24cad4c userinfo-nickname">
+            <template data="{{...$root[$kk+'0'], $root}}" is="card$38a29f9e"></template>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

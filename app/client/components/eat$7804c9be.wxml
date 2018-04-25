@@ -1,0 +1,63 @@
+<template name="eat$7804c9be">
+  <view class="_div data-v-5eee63ef main-layout">
+    <view class="_div data-v-5eee63ef record-page" hidden="{{!(!isEditModel)}}">
+      <button class="_button data-v-5eee63ef eat-record-button" bindtap="handleProxy"
+        data-eventid="{{'0'}}" data-comkey="{{$k}}">吃饭打卡</button>
+      <button class="_button data-v-5eee63ef view-history-button" bindtap="handleProxy"
+        data-eventid="{{'1'}}" data-comkey="{{$k}}">查看记录</button>
+      <view class="_div data-v-5eee63ef view-history-layout">
+        <view class="_div data-v-5eee63ef record-item" wx:key="record.time" key="{{record.time}}"
+          wx:for="{{historyRecordList}}" wx:for-index="index" wx:for-item="record"
+          style=" {{'background-image:' + 'url(' + record.imgList[0] + ')' + ';'}}">
+          <view class="_div data-v-5eee63ef record-item-wrap">
+            <view class="_p data-v-5eee63ef record-words">{{record.wordsToLynn}}</view>
+            <view class="_div data-v-5eee63ef date-info">
+              <view class="_p data-v-5eee63ef record-time">{{record.time}}</view>
+              <view class="_p data-v-5eee63ef record-position">
+                <label class="_span data-v-5eee63ef">
+                  <image src="{{locationIconSrcWhite}}" class="_img data-v-5eee63ef"></image>
+                </label>{{record.location}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="_div data-v-5eee63ef edit-layout" hidden="{{!(isEditModel)}}">
+      <view class="_div data-v-5eee63ef textarea-box">
+        <textarea placeholder="给老公的留言~" value="{{recordContent.wordsToLynn}}" bindinput="handleProxy"
+          data-eventid="{{'2'}}" data-comkey="{{$k}}" class="_textarea data-v-5eee63ef"
+        />
+      </view>
+      <view class="_div data-v-5eee63ef location-box">
+        <label class="_span data-v-5eee63ef">
+          <image src="{{locationIconSrc}}" class="_img data-v-5eee63ef"></image>
+        </label>
+        <label wx:if="{{locationString === ''}}" class="_span data-v-5eee63ef">正在获取老婆定位...</label>
+        <label wx:if="{{locationString !== ''}}" class="_span data-v-5eee63ef">{{locationString}}</label>
+      </view>
+      <view class="_h4 data-v-5eee63ef eat-title">皂片
+        <view class="_small data-v-5eee63ef">我有好好吃饭捏~</view>
+      </view>
+      <view class="_div data-v-5eee63ef record-img-preview-layout">
+        <view class="_div data-v-5eee63ef img-item" wx:key="item.src" key="{{item.src}}"
+          wx:for="{{recordContent.recordImgPreviewList}}" wx:for-index="index" wx:for-item="item">
+          <view class="_div data-v-5eee63ef remove-img" bindtap="handleProxy" data-eventid="{{'3-'+index}}"
+            data-comkey="{{$k}}"></view>
+          <image src="{{item.src}}" alt class="_img data-v-5eee63ef img-preview-item"></image>
+        </view>
+        <view class="_div data-v-5eee63ef img-item" bindtap="handleProxy" data-eventid="{{'4'}}"
+          data-comkey="{{$k}}">
+          <view class="_div data-v-5eee63ef img-wrapper">
+            <image src="{{addIconSrc}}" alt class="_img data-v-5eee63ef img-preview-item add-img-button"></image>
+          </view>
+        </view>
+      </view>
+      <view class="_div data-v-5eee63ef submit-layout">
+        <button class="_button data-v-5eee63ef submit-record" bindtap="handleProxy"
+          data-eventid="{{'5'}}" data-comkey="{{$k}}">提交给老公</button>
+        <button class="_button data-v-5eee63ef submit-return" type="success"
+          bindtap="handleProxy" data-eventid="{{'6'}}" data-comkey="{{$k}}">返回</button>
+      </view>
+    </view>
+  </view>
+</template>

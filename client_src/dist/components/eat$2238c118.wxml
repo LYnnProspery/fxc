@@ -1,0 +1,35 @@
+<template name="eat$2238c118">
+  <view class="_div data-v-7f7f2fa0 main-layout">
+    <button class="_button data-v-7f7f2fa0 eat-record-button" bindtap="handleProxy"
+      hidden="{{!(!isEditModel)}}" data-eventid="{{'0'}}" data-comkey="{{$k}}">吃饭打卡</button>
+    <view class="_div data-v-7f7f2fa0 edit-layout" hidden="{{!(isEditModel)}}">
+      <view class="_div data-v-7f7f2fa0 textarea-box">
+        <textarea placeholder="留言~" value="{{recordContent.wordsToLynn}}" class="_textarea data-v-7f7f2fa0"
+        />
+      </view>
+      <view class="_h4 data-v-7f7f2fa0 eat-title">皂片
+        <view class="_small data-v-7f7f2fa0">我有好好吃饭捏~</view>
+      </view>
+      <view class="_div data-v-7f7f2fa0 record-img-preview-layout">
+        <view class="_div data-v-7f7f2fa0 img-item" wx:key="item.src" key="{{item.src}}"
+          wx:for="{{recordContent.recordImgPreviewList}}" wx:for-index="index" wx:for-item="item">
+          <view class="_div data-v-7f7f2fa0 remove-img" bindtap="handleProxy" data-eventid="{{'1-'+index}}"
+            data-comkey="{{$k}}"></view>
+          <image src="{{item.src}}" alt class="_img data-v-7f7f2fa0 img-preview-item"></image>
+        </view>
+        <view class="_div data-v-7f7f2fa0 img-item" bindtap="handleProxy" data-eventid="{{'2'}}"
+          data-comkey="{{$k}}">
+          <view class="_div data-v-7f7f2fa0 img-wrapper">
+            <image src="{{addIconSrc}}" alt class="_img data-v-7f7f2fa0 img-preview-item add-img-button"></image>
+          </view>
+        </view>
+      </view>
+      <view class="_div data-v-7f7f2fa0 submit-layout">
+        <button class="_button data-v-7f7f2fa0 submit-record" bindtap="handleProxy"
+          data-eventid="{{'3'}}" data-comkey="{{$k}}">提交</button>
+        <button class="_button data-v-7f7f2fa0 submit-return" bindtap="handleProxy"
+          data-eventid="{{'4'}}" data-comkey="{{$k}}">返回</button>
+      </view>
+    </view>
+  </view>
+</template>

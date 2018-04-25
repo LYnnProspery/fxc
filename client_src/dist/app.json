@@ -1,0 +1,15 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/eat/eat",
+    "pages/potato/potato",
+    "pages/tips/tips"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "MISS",
+    "navigationBarTextStyle": "black"
+  }
+}
